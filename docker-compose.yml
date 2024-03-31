@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: app_db
+    environment:
+      MYSQL_DATABASE: 'auth-database'
+      MYSQL_ROOT_PASSWORD: 'masterpassl'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  spring_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring_app
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_URL: 'jdbc:mysql://mysql:3306/auth-database'
+      DATABASE_USER: 'root'
+      DATABASE_PASSWORD: 'masterpassl'
+      API_TOKEN: '9A8B7C6D5E4F3A291B0C2D3E4F5A687B9C6D5E8F9A0B3C2D1E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7'
+    ports:
+      - '8080:8080'
+
+volumes:
+  mysql_data:
+
+
