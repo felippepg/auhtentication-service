@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este é o backend do projeto de autenticação que complementa o frontend [Frontend](https://github.com/felippepg/authentication-service-frontend). Este serviço é responsável por gerenciar a autenticação de usuários, incluindo a funcionalidade de autenticação de dois fatores (2FA), gerando um código em QRCode.
+Este é o backend do projeto de autenticação que complementa o [Frontend](https://github.com/felippepg/authentication-service-frontend). Este serviço é responsável por gerenciar a autenticação de usuários, incluindo a funcionalidade de autenticação de dois fatores (2FA), gerando um código em QRCode.
 
 
 ## Funcionalidades
